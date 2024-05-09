@@ -11,7 +11,7 @@ if (isset($_GET['version']) && !empty($_GET['version']))
   }
   else
   {
-    echi "false";
+    echo "false";
   }
 }
 
