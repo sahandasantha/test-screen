@@ -4268,6 +4268,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLoadFinished,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Browser.Cnds.IsPortraitLandscape,
+		C3.Plugins.Browser.Acts.Vibrate,
 		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.Browser.Acts.RequestFullScreen
 	];
@@ -4278,7 +4279,7 @@ self.C3_JsPropNameTable = [
 	{Sprite3: 0},
 	{Sprite4: 0},
 	{PlatformInfo: 0},
-	{Text: 0},
+	{ori: 0},
 	{Browser: 0},
 	{Text2: 0},
 	{Text3: 0},
@@ -4294,7 +4295,7 @@ self.InstanceType = {
 	Sprite3: class extends self.ISpriteInstance {},
 	Sprite4: class extends self.ISpriteInstance {},
 	PlatformInfo: class extends self.IInstance {},
-	Text: class extends self.ITextInstance {},
+	ori: class extends self.ITextInstance {},
 	Browser: class extends self.IInstance {},
 	Text2: class extends self.ITextInstance {},
 	Text3: class extends self.ITextInstance {},
@@ -4402,6 +4403,7 @@ function or(l, r)
 self.C3_ExpressionFuncs = [
 		() => "complete",
 		() => "Pot",
+		() => "200,100,200",
 		() => "Lan"
 ];
 
