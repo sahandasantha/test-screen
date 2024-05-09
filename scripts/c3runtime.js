@@ -4293,7 +4293,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Acts.RequestFullScreen,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.AJAX.Acts.Post,
-		C3.Plugins.AJAX.Acts.SetTimeout,
 		C3.Plugins.Browser.Cnds.OnOffline,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Browser.Cnds.OnOnline,
@@ -4451,7 +4450,6 @@ self.C3_ExpressionFuncs = [
 		() => "https://sahandasantha.github.io/test-screen/update.php",
 		() => "2.3",
 		() => "POST",
-		() => 40,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue() + ":Net: Disconnect") + "\n");
