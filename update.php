@@ -1,11 +1,26 @@
-<?php 
-$rtext = $GET['text'];
-if($rtext % 2 == 0)
+<?php
+
+$current_version = "2.2";
+
+if (isset($_GET['version']) && !empty($_GET['version']))
 {
-  echo "even";
+  $version = $_GET['version'];
+  if($version == $current_version)
+  {
+    $data = "upto-date";
+    echo $data;
+  }
+  else
+  {
+    $data = "required";
+    echo $data;
+  }
 }
 else
 {
-  echo "odd";
+  $data = "error";
+  echo $data;
 }
+
+  
 ?>
