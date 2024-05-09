@@ -4268,9 +4268,10 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Cnds.OnLoadFinished,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Browser.Cnds.IsPortraitLandscape,
-		C3.Plugins.Browser.Acts.Vibrate,
+		C3.Plugins.System.Acts.SetLayerVisible,
 		C3.Plugins.Touch.Cnds.OnTapGesture,
-		C3.Plugins.Browser.Acts.RequestFullScreen
+		C3.Plugins.Browser.Acts.RequestFullScreen,
+		C3.Plugins.System.Cnds.OnLayoutStart
 	];
 };
 self.C3_JsPropNameTable = [
@@ -4285,8 +4286,10 @@ self.C3_JsPropNameTable = [
 	{Text3: 0},
 	{Text4: 0},
 	{Touch: 0},
+	{Sprite5: 0},
+	{rotate: 0},
 	{Orientation: 0},
-	{Device: 0}
+	{debug: 0}
 ];
 
 self.InstanceType = {
@@ -4300,7 +4303,9 @@ self.InstanceType = {
 	Text2: class extends self.ITextInstance {},
 	Text3: class extends self.ITextInstance {},
 	Text4: class extends self.ITextInstance {},
-	Touch: class extends self.IInstance {}
+	Touch: class extends self.IInstance {},
+	Sprite5: class extends self.ISpriteInstance {},
+	rotate: class extends self.ISpriteInstance {}
 }
 }
 
@@ -4401,10 +4406,13 @@ function or(l, r)
 }
 
 self.C3_ExpressionFuncs = [
-		() => "complete",
-		() => "Pot",
-		() => "200,100,200",
-		() => "Lan"
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (v0.GetValue() + ":Complete");
+		},
+		() => "Portrait",
+		() => 1,
+		() => "Landscape"
 ];
 
 
