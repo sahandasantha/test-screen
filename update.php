@@ -1,11 +1,11 @@
 <?php
 
 $current_version = "2.2";
-$version = $_POST["version"];
 
-if($ID !=="")
+if (isset($_GET['version']) && !empty($_GET['version']))
 {
-  if($ID == $current_version)
+  $version = $_GET['version'];
+  if($version == $current_version)
   {
     echo "true";
   }
