@@ -1,6 +1,7 @@
-<?php header('Access-Control-Allow-Origin: *');
+<?php 
+header('Access-Control-Allow-Origin: *');
 
 $data = $_GET['data'];
-echo $data;
-}
+echo json_encode($data);
+
 ?>
