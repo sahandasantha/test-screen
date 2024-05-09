@@ -4447,8 +4447,8 @@ self.C3_ExpressionFuncs = [
 		() => 1,
 		() => "Landscape",
 		() => "update",
-		() => "https://sahandasantha.github.io/test-screen/update.php",
-		() => "2.3",
+		() => "https://sahandasantha.github.io/test-screen/update.php?",
+		() => "version=2.3",
 		() => "POST",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
