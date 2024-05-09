@@ -4293,11 +4293,11 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Browser.Acts.RequestFullScreen,
 		C3.Plugins.System.Cnds.OnLayoutStart,
 		C3.Plugins.AJAX.Acts.Post,
+		C3.Plugins.AJAX.Exps.Progress,
 		C3.Plugins.AJAX.Acts.SetTimeout,
 		C3.Plugins.Browser.Cnds.OnOffline,
 		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.Browser.Cnds.OnOnline,
-		C3.Plugins.PlatformInfo.Cnds.OnNetworkChange,
 		C3.Plugins.AJAX.Cnds.OnComplete,
 		C3.Plugins.AJAX.Exps.LastData
 	];
@@ -4318,6 +4318,7 @@ self.C3_JsPropNameTable = [
 	{rotate: 0},
 	{Sprite6: 0},
 	{AJAX: 0},
+	{Textajax: 0},
 	{Orientation: 0},
 	{debug: 0}
 ];
@@ -4337,7 +4338,8 @@ self.InstanceType = {
 	Sprite5: class extends self.ISpriteInstance {},
 	rotate: class extends self.ISpriteInstance {},
 	Sprite6: class extends self.ISpriteInstance {},
-	AJAX: class extends self.IInstance {}
+	AJAX: class extends self.IInstance {},
+	Textajax: class extends self.ITextInstance {}
 }
 }
 
@@ -4450,7 +4452,11 @@ self.C3_ExpressionFuncs = [
 		() => "https://sahandasantha.github.io/test-screen/index.html",
 		() => "2.3",
 		() => "POST",
-		() => 10,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		},
+		() => 40,
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue() + ":Net: Disconnect") + "\n");
@@ -4458,14 +4464,6 @@ self.C3_ExpressionFuncs = [
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue() + ":Net: Connect") + "\n");
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => ((v0.GetValue() + ":Network change") + "\n");
-		},
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
 		}
 ];
 
