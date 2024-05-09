@@ -4458,7 +4458,7 @@ self.C3_ExpressionFuncs = [
 			const v0 = p._GetNode(0).GetVar();
 			return () => ("version=" + v0.GetValue());
 		},
-		() => "POST",
+		() => "GET",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			return () => ((v0.GetValue() + ":Net: Disconnect") + "\n");
