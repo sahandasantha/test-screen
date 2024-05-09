@@ -1,5 +1,4 @@
-<?php
-<?php header('Access-Control-Allow-Origin: *'); ?>
+<?php header('Access-Control-Allow-Origin: *');
 //Setup token to look for
 $token_required = "1234";
 
