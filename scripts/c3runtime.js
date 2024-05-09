@@ -4292,6 +4292,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTapGesture,
 		C3.Plugins.Browser.Acts.RequestFullScreen,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Text.Exps.Text,
 		C3.Plugins.AJAX.Acts.Post,
 		C3.Plugins.Browser.Cnds.OnOffline,
 		C3.Plugins.Sprite.Acts.SetVisible,
@@ -4318,6 +4319,7 @@ self.C3_JsPropNameTable = [
 	{AJAX: 0},
 	{Textajax: 0},
 	{Orientation: 0},
+	{version: 0},
 	{debug: 0}
 ];
 
@@ -4446,9 +4448,16 @@ self.C3_ExpressionFuncs = [
 		() => "Portrait",
 		() => 1,
 		() => "Landscape",
+		p => {
+			const n0 = p._GetNode(0);
+			return () => n0.ExpObject();
+		},
 		() => "update",
-		() => "https://sahandasantha.github.io/test-screen/update.php?",
-		() => "version=2.3",
+		() => "https://test-game007.000webhostapp.com/update.php?",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => ("version=" + v0.GetValue());
+		},
 		() => "POST",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
