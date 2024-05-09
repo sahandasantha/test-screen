@@ -1,7 +1,11 @@
 <?php 
-header('Access-Control-Allow-Origin: *');
-
-$data = $_GET['data'];
-echo json_encode($data);
-
+$rtext = $GET['text'];
+if($rtext % 2 == 0)
+{
+  echo "even";
+}
+else
+{
+  echo "odd";
+}
 ?>
